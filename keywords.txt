@@ -1,0 +1,8 @@
+Sensor  KEYWORD1
+pin KEYWORD2
+baseVal KEYWORD3
+prevStates  KEYWORD4
+threshold KEYWORD5
+noReadings  KEYWORD6
+setBaseVal  KEYWORD7
+isTriggeredValue  KEYWORD8
