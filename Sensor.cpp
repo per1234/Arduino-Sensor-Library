@@ -29,7 +29,7 @@ bool Sensor::isTriggeredValue(int newVal){
 
   int trigg = 0;
   for(int i = 0; i < counter; i++){
-    int diff = abs(baseVal - prevStates[i]);
+    int diff = prevStates[i]- baseVal;
     if(diff > threshold){
       trigg++;
     }
@@ -37,7 +37,7 @@ bool Sensor::isTriggeredValue(int newVal){
 
 
   // if number triggered larger than not triggered, then accepted
-  if(trigg > counter/2){
+  if(trigg > counter/3){
     return(true);
   } else{
     return(false);
