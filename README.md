@@ -1,8 +1,8 @@
 # Arduino-Sensor-Library
 
-This library contains the class Sensor, which allows to filter misreadings out. 
+This library contains the class Sensor, which allows to filter misreadings out.
 
-The Sensor class contains the following public attributes and methods: 
+The Sensor class contains the following public attributes and methods:
 
 | Attributes       |            |   |
 | ------------- |-------------| -----|
