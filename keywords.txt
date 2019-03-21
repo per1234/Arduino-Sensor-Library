@@ -1,8 +1,24 @@
+#######################################
+# Syntax Coloring Map Sensor
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
 Sensor  KEYWORD1
-pin KEYWORD2
-baseVal KEYWORD3
-prevStates  KEYWORD4
-threshold KEYWORD5
-noReadings  KEYWORD6
-setBaseVal  KEYWORD7
-isTriggeredValue  KEYWORD8
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+pin		KEYWORD2
+baseVal		KEYWORD2
+prevStates	KEYWORD2
+threshold	KEYWORD2
+noReadings	KEYWORD2
+setBaseVal	KEYWORD2
+isTriggeredValue	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
