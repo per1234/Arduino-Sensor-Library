@@ -7,6 +7,7 @@ Sensor::Sensor(int attachedTo, int prev, int thres) {
   pin = attachedTo;
   prevStates = new int[prev];
   threshold = thres;
+  len = prev;
 }
 
 //==============================================================
@@ -24,7 +25,6 @@ bool Sensor::isTriggeredValue(int newVal){
 
   // check how many were triggered from prevStates
   int counter;
-  int len = sizeof(prevStates) / sizeof(prevStates[0]);
   if(noReadings < len){
     counter = noReadings;
   }else{
@@ -48,28 +48,36 @@ bool Sensor::isTriggeredValue(int newVal){
 //=============================================================
 
 void Sensor::addReading(int val){
+  //Serial.println(val);
   enqueuePrevStates(val);
+  /*Serial.print('[');
+  for(int i = 0; i < len; i++){
+    Serial.print(prevStates[i]);
+    Serial.print(" ,");
+  }
+  Serial.println(']');*/
 }
 
 //=============================================================
 int Sensor::getSmoothReading(){
-  int len = sizeof(prevStates) / sizeof(prevStates[0]);
+  int max = len;
   if(noReadings < len){
-    len = noReadings;
+    max = noReadings;
   }
-  int counter = 0;
-  for(int i = 0; i < counter; i++){
-    counter = counter + prevStates[i];
+  int total = 0;
+  for(int i = 0; i < max; i++){
+    
+    total = (total + prevStates[i]);
   }
-  return(counter/len);
+
+  Serial.println(total/max);
+  return(total/max);
 }
 
 
 //=============================================================
   void Sensor::enqueuePrevStates(int value){
 
-     int len = sizeof(prevStates) / sizeof(prevStates[0]);
-     //Serial.println(len);
      int last;
      if(noReadings >= len){
         int discard = dequeuePrevStates();
@@ -83,12 +91,12 @@ int Sensor::getSmoothReading(){
 
 //==============================================================
 int Sensor::dequeuePrevStates(){
-   int len = sizeof(prevStates) / sizeof(prevStates[0]);
    int first = prevStates[0];
    for(int i = 1; i < len; i++){
     prevStates[i-1] = prevStates[i];
    }
    prevStates[len-1] = 0;
+   return(first);
 }
 
 //==============================================================

@@ -15,9 +15,10 @@ class Sensor
   public:
     int pin;
     int baseVal = 0;
-    int *prevStates;
+    int* prevStates = NULL;
     int threshold;
     int noReadings = 0;
+    int len;
     //======================================================
   public:
     Sensor(int attachedTo, int prev, int thres);
