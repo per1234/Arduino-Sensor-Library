@@ -6,13 +6,13 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-Sensor  KEYWORD1
+Sensor	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-pin		KEYWORD2
-baseVal		KEYWORD2
+pin	KEYWORD2
+baseVal	KEYWORD2
 prevStates	KEYWORD2
 threshold	KEYWORD2
 noReadings	KEYWORD2
